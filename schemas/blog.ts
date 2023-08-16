@@ -9,41 +9,28 @@ export default {
       title: 'Name',
     },
     {
-      name: 'content',
-      title: 'Content',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-          marks: {
-            decorators: [
-              // ...
-            ],
-            annotations: [
-              {
-                name: 'internalLink',
-                type: 'object',
-                title: 'Internal link',
-                fields: [
-                  {
-                    name: 'reference',
-                    type: 'reference',
-                    title: 'Reference',
-                    to: [
-                      {type: 'post'},
-                      // other types you may want to link to
-                    ],
-                  },
-                ],
-              },
-            ],
+        name: 'content',
+        title: 'Content',
+        type: 'array',
+        of: [
+          {
+            type: 'block',
+            marks: {
+              decorators: [
+                {title: 'Strong', value: 'strong'},
+                {title: 'Emphasis', value: 'em'},
+                {title: 'Code', value: 'code'}
+              ]
+            }
           },
-        },
-      ],
-    },
+          {
+            type: 'image'
+          }
+        ]
+      },
     {
-      title: 'Launch Scheduled At',
-      name: 'launchAt',
+      title: 'Created At',
+      name: 'createdAt',
       type: 'datetime',
       options: {
         dateFormat: 'YYYY-MM-DD',
