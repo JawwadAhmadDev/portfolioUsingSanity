@@ -11,10 +11,10 @@ export default {
     },
     // meta description
     {
-        name: 'metaDescription',
-        type: 'string',
-        title: 'Meta Description',
-      },
+      name: 'metaDescription',
+      type: 'string',
+      title: 'Meta Description',
+    },
     // content
     {
       name: 'content',
@@ -63,6 +63,19 @@ export default {
         timeStep: 15,
         calendarTodayLabel: 'Today',
       },
+    },
+    // author reference
+    {
+      name: 'author',
+      type: 'object',
+      fields: [
+        {
+          title: 'Author',
+          name: 'author',
+          type: 'reference',
+          to: [{type: 'author'}],
+        },
+      ],
     },
   ],
 }
