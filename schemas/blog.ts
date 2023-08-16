@@ -9,6 +9,12 @@ export default {
       type: 'string',
       title: 'Name',
     },
+    // meta description
+    {
+        name: 'metaDescription',
+        type: 'string',
+        title: 'Meta Description',
+      },
     // content
     {
       name: 'content',
@@ -32,20 +38,20 @@ export default {
     },
     // blog image
     {
-        title: 'Blog Image',
-        name: 'blogImage',
-        type: 'image',
-        options: {
-          hotspot: true // <-- Defaults to false
-        },
-        fields: [
-          {
-            name: 'caption',
-            type: 'string',
-            title: 'Caption',
-          },
-        ]
+      title: 'Blog Image',
+      name: 'blogImage',
+      type: 'image',
+      options: {
+        hotspot: true, // <-- Defaults to false
       },
+      fields: [
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Caption',
+        },
+      ],
+    },
     // time
     {
       title: 'Created At',
