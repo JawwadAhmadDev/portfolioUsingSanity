@@ -9,9 +9,14 @@ export default {
       title: 'Name',
     },
     {
-      name: 'document',
-      type: 'string',
-      title: 'Document',
+      name: 'content',
+      type: 'array',
+      title: 'Content',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       title: 'Launch Scheduled At',
