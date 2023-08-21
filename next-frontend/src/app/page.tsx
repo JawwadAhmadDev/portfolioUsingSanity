@@ -2,7 +2,7 @@ import { createClient } from "next-sanity";
 
 export default async function Home() {
   const blogs = await fetchData();
-  console.log("blogs", blogs.props);
+  console.log("blogs", blogs);
   return (
     <main>
       <div>Hello world</div>
@@ -19,13 +19,11 @@ const client = createClient({
 export async function fetchData() {
   try {
     const blogs = await client.fetch(`*[_type == "blog"]`);
-    return {
-      props: { blogs },
-    };
+    return blogs;
   } catch (error) {
     console.error("Error fetching blogs:", error);
     return {
-      props: { blogs: [] }, // Return an empty array or some default value.
+      blogs: [], // Return an empty array or some default value.
     };
   }
 }
