@@ -1,4 +1,5 @@
 import { createClient } from "next-sanity";
+import PortableText from "react-portable-text";
 
 export default async function Home() {
   const blogs = await fetchData();
@@ -6,6 +7,22 @@ export default async function Home() {
   return (
     <main>
       <div>Hello world</div>
+      <div>
+        <PortableText
+          // Pass in block content straight from Sanity.io
+          content={blogs[0].content}
+          projectId="w8764j6a"
+          dataset="production"
+          // Optionally override marks, decorators, blocks, etc. in a flat
+          // structure without doing any gymnastics
+          serializers={{
+            h1: (blogs: any) => <h1 style={{ color: "red" }} {...blogs} />,
+            li: ({ children }: any) => (
+              <li className="special-list-item">{children}</li>
+            ),
+          }}
+        />
+      </div>
     </main>
   );
 }
